@@ -23,6 +23,9 @@ body {
     position: relative;
 }
 
+.mobile-menu-btn{
+    display: none;
+}
 .background-animation {
     position: fixed;
     top: 0;

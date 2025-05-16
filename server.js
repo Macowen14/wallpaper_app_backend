@@ -1,5 +1,4 @@
 import express from 'express';
-import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import path from 'path';
 import authRoutes from './routes/auth/index.js';
@@ -28,21 +27,6 @@ app.get('/', (req, res) => {
 
 // Auth routes
 app.use('/auth', authRoutes);
-
-// Example of protected route middleware (optional)
-
-function protect(req, res, next) {
-  const token = req.headers.authorization?.split(' ')[1];
-  if (!token) return res.status(401).json({ error: 'No token provided' });
-
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded;
-    next();
-  } catch {
-    res.status(401).json({ error: 'Invalid token' });
-  }
-}
 
 // Connect to MongoDB and start server
 connectDB().then(() => {
