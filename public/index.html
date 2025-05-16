@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>WallWonder - Stunning Wallpapers for Your Device</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <header class="animate__animated animate__fadeInDown">
+        <div class="container">
+            <nav>
+                <div class="logo">Wall<span>Wonder</span></div>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Get Notified</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero animate__animated animate__fadeIn">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Transform Your Device With <span>Stunning Wallpapers</span></h1>
+                    <p class="subtitle">4K quality, hand-curated wallpapers updated daily</p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn-primary animate__animated animate__pulse animate__infinite">Get Early Access</a>
+                        <a href="#gallery" class="btn-secondary">View Gallery</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="phone-mockup animate__animated animate__fadeInRight">
+                        <div class="screen">
+                            <div class="wallpaper-slider">
+                                <img src="./img-1.jpeg" alt="Wallpaper Example" loading="lazy" class="active">
+                                <img src="./img-2.jpeg" alt="Wallpaper Example" loading="lazy">
+                                <img src="./img-3.jpeg" alt="Wallpaper Example" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose WallWonder?</h2>
+                <div class="features-grid">
+                    <div class="feature-card animate-fadeInUp" data-delay="0.1s">
+                        <div class="icon"><i class="fas fa-palette"></i></div>
+                        <h3>Curated Collection</h3>
+                        <p>Hand-selected wallpapers from professional artists and photographers</p>
+                    </div>
+                    <div class="feature-card animate-fadeInUp" data-delay="0.3s">
+                        <div class="icon"><i class="fas fa-sync-alt"></i></div>
+                        <h3>Daily Updates</h3>
+                        <p>Fresh wallpapers added every day to keep your device looking fresh</p>
+                    </div>
+                    <div class="feature-card animate-fadeInUp" data-delay="0.5s">
+                        <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Perfect Fit</h3>
+                        <p>Optimized for all device sizes and aspect ratios</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <h2 class="section-title">Featured Wallpapers</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item animate-fadeInUp" data-delay="0.1s">
+                        <img src="./img-4.jpeg" alt="Wallpaper" loading="lazy">
+                        <div class="overlay">
+                            <button class="download-btn"><i class="fas fa-download"></i></button>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp" data-delay="0.3s">
+                        <img src="./img-1.jpeg" alt="Wallpaper" loading="lazy">
+                        <div class="overlay">
+                            <button class="download-btn"><i class="fas fa-download"></i></button>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-fadeInUp" data-delay="0.5s">
+                        <img src="./img-3.jpeg" alt="Wallpaper" loading="lazy">
+                        <div class="overlay">
+                            <button class="download-btn"><i class="fas fa-download"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <h2 class="section-title">Get Early Access</h2>
+                    <p>Be the first to know when we launch and get exclusive early access to our premium collection</p>
+                    
+                    <form id="email-form" class="animate-fadeInUp">
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                            <button type="submit" class="btn-primary">Notify Me <i class="fas fa-paper-plane"></i></button>
+                        </div>
+                        <div class="form-message"></div>
+                    </form>
+                    
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">Wall<span>Wonder</span></div>
+                <p>&copy; <span id="current-year"></span> WallWonder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
