@@ -51,7 +51,7 @@ export async function register(req, res) {
     const token = sign(
       { id: user._id }, 
       process.env.JWT_SECRET, 
-      { expiresIn: '1d' }
+      { expiresIn: '2d' }
     );
 
     // Return response without password hash
