@@ -5,6 +5,7 @@ import authRoutes from './routes/auth/index.js';
 import cors from "cors"
 import { connectDB } from './config/db.js';
 import { setMaxListeners } from 'events';
+import favouriteImagesRoutes from "./routes/favouriteImages/index.js"
 
 setMaxListeners(20);
 
@@ -26,6 +27,7 @@ app.get('/', (req, res) => {
 
 // Auth routes
 app.use('/auth', authRoutes);
+app.use (favouriteImagesRoutes)
 
 // Connect to MongoDB and start server
 connectDB().then(() => {

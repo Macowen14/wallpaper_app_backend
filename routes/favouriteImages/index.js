@@ -1,6 +1,6 @@
 import express from 'express';
-import { toggleFavorite, getFavorites } from '../../controllers/favoriteImagesController.js';
-import { authenticate } from '../middleware/authMiddleware.js';
+import { toggleFavorite, getFavorites } from '../../controllers/favouriteImagesController.js';
+import { authenticate } from '../../middleware/authMiddleware.js';
 
 const router = express.Router();
 
@@ -8,6 +8,6 @@ const router = express.Router();
 router.post('/toggle', authenticate, toggleFavorite);
 
 // Get all favorites
-router.get('/', authenticate, getFavorites);
+router.get('/getFavourites', authenticate, getFavorites);
 
 export default router;
