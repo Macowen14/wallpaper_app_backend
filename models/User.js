@@ -21,7 +21,8 @@ const userSchema = new mongoose.Schema({
   favorites: {
     type: [String], // Array of image URLs
     default: []     // Empty array by default
-  }
+  },
+  isAdmin: { type: Boolean, default: false },
 }, { timestamps: true });
 
 const User = mongoose.model('User', userSchema);
