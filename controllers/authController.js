@@ -15,7 +15,7 @@ const validatePassword = (password) => {
 
 export async function register(req, res) {
   try {
-    const { email, password } = req.body;
+    const { username, email, password } = req.body;
 
     // Validate input
     if (!email || !password) {
@@ -43,6 +43,7 @@ export async function register(req, res) {
     // Hash password and create user
     const hash = await _hash(password, 10);
     const user = await User.create({ 
+      username,
       email, 
       password: hash 
     });

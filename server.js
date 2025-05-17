@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 import path from 'path';
 import authRoutes from './routes/auth/index.js';
 import cors from "cors"
-import jwt from 'jsonwebtoken';
 import { connectDB } from './config/db.js';
 import { setMaxListeners } from 'events';
 
