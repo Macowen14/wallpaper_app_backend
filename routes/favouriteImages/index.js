@@ -4,10 +4,8 @@ import { authenticate } from '../../middleware/authMiddleware.js';
 
 const router = express.Router();
 
-// Single endpoint for adding/removing favorites
-router.post('/toggle', authenticate, toggleFavorite);
 
-// Get all favorites
-router.get('/getFavourites', authenticate, getFavorites);
+router.post('/favorites/toggle', authenticate, toggleFavorite);
+router.get('/favorites', authenticate, getFavorites);
 
 export default router;
