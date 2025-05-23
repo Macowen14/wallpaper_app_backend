@@ -3,41 +3,35 @@ import User from '../models/User.js';
 
 export const authenticate = async (req, res, next) => {
   try {
-    // 1. Get token from header
     const token = req.header('Authorization')?.replace('Bearer ', '');
     
     if (!token) {
-      return res.status(401).json({ 
-        success: false,
-        error: 'Authentication required' 
-      });
+      console.log('[Auth] No token provided');
+      return res.status(401).json({ success: false, error: 'Authentication required' });
     }
 
-    // 2. Verify token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    
-    // 3. Find user (ensure they still exist)
+    console.log('[Auth] Decoded Token:', decoded);
+
     const user = await User.findById(decoded.id);
     if (!user) {
-      return res.status(401).json({ 
-        success: false,
-        error: 'User not found' 
-      });
+      console.log('[Auth] User not found by ID:', decoded.id);
+      return res.status(401).json({ success: false, error: 'User not found' });
     }
 
-    // 4. Attach user to request
-    req.user = user;
+    req.user = { userId: user._id }; // Explicit and clear
     next();
 
   } catch (error) {
-  if (error.name === 'TokenExpiredError') {
-    return res.status(401).json({ success: false, error: 'Token expired' });
-  }
-  if (error.name === 'JsonWebTokenError') {
-    return res.status(401).json({ success: false, error: 'Invalid token' });
-  }
+    console.error('[Auth] Authentication error:', error);
 
-  res.status(401).json({ success: false, error: 'Please authenticate' });
-}
+    if (error.name === 'TokenExpiredError') {
+      return res.status(401).json({ success: false, error: 'Token expired' });
+    }
+    if (error.name === 'JsonWebTokenError') {
+      return res.status(401).json({ success: false, error: 'Invalid token' });
+    }
 
+    res.status(401).json({ success: false, error: 'Please authenticate' });
+  }
 };
