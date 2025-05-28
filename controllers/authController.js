@@ -52,7 +52,7 @@ export async function register(req, res) {
     const token = sign(
       { id: user._id }, 
       process.env.JWT_SECRET, 
-      { expiresIn: '2d' }
+      { expiresIn: '15d' }
     );
 
     // Return response without password hash
@@ -121,7 +121,7 @@ export async function login(req, res) {
     const token = sign(
       { id: user._id }, 
       process.env.JWT_SECRET, 
-      { expiresIn: '1d' }
+      { expiresIn: '15d' }
     );
 
     // Return response without password hash
