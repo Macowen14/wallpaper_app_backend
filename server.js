@@ -7,7 +7,7 @@ import { connectDB } from './config/db.js';
 import { setMaxListeners } from 'events';
 import favouriteImagesRoutes from './routes/favouriteImages/index.js';
 import jwt from 'jsonwebtoken';
-import job from "./config/cron.js"
+//import job from "./config/cron.js"
 
 dotenv.config();
 
