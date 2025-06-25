@@ -21,7 +21,6 @@ setMaxListeners(20);
 const app = express();
 app.use(express.json());
 app.use(cors());
-job.start();
 
 // Static files
 const __dirname = path.resolve();
