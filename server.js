@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 
 // Routes
 app.use('/auth', authRoutes);
-app.use('/images', favouriteImagesRoutes);
+app.use('/favorites', favouriteImagesRoutes);
 
 app.post('/auth/verify', (req, res) => {
   const authHeader = req.headers['authorization'];
